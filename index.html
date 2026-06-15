@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Weather App</h1>
+    <p class="subtitle">Search any city in the world for current conditions and a 5-day forecast.</p>
+  </header>
+
+  <main>
+
+    <div class="search-row">
+      <input
+        type="text"
+        id="city-input"
+        placeholder="Enter a city..."
+        aria-label="City name"
+        autocomplete="off"
+      />
+      <button id="search-btn" aria-label="Search">
+        Search
+      </button>
+    </div>
+
+    <p class="error-msg" id="error-msg" role="alert"></p>
+    <p class="loading" id="loading" aria-live="polite">Loading...</p>
+
+    <div id="weather-result" hidden>
+
+      <section class="weather-card" aria-labelledby="city-display">
+        <div class="card-top">
+          <div>
+            <h2 id="city-display">—</h2>
+            <p class="condition" id="condition-display">—</p>
+          </div>
+          <div class="temp-icon" id="temp-icon" aria-hidden="true">☀️</div>
+        </div>
+
+        <div class="main-temp" aria-label="Current temperature">
+          <span id="temp-display">—</span><span class="unit">°C</span>
+        </div>
+
+        <div class="details-grid">
+          <div class="detail">
+            <span class="detail-label">Humidity</span>
+            <span class="detail-value" id="humidity-display">—</span>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Wind</span>
+            <span class="detail-value" id="wind-display">—</span>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Feels like</span>
+            <span class="detail-value" id="feels-display">—</span>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="forecast-title">
+        <h2 id="forecast-title" class="section-label">5-day forecast</h2>
+        <div class="forecast-grid" id="forecast-grid"></div>
+      </section>
+
+    </div>
+
+  </main>
+
+  <footer>
+    <p>Data from <a href="https://openweathermap.org" target="_blank" rel="noopener">OpenWeather</a> · Built with HTML, CSS &amp; vanilla JavaScript · <a href="https://github.com/Aeoncookie" target="_blank" rel="noopener">github.com/Aeoncookie</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
